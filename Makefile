@@ -1,11 +1,11 @@
 
 NVCC        = nvcc
 ifeq (,$(shell which nvprof))
-NVCC_FLAGS  = -O3 -I/usr/local/cuda/include -arch=sm_20
+NVCC_FLAGS  = -O3 -arch=sm_20
 else
-NVCC_FLAGS  = -O3 -I/usr/local/cuda/include
+NVCC_FLAGS  = -O3 
 endif
-LD_FLAGS    = -lcudart -L/usr/local/cuda/lib64
+LD_FLAGS    = -lcudart
 EXE	        = histogram
 OBJ	        = main.o support.o
 
